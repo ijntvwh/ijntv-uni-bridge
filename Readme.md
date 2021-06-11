@@ -2,15 +2,17 @@
 import bridge from 'ijntv-uni-bridge'
 
 ## Example
+```javascript
 const args = ...
-bridge.router(args).then(cb => {  
+bridge.router(args).then(cb => { 
   const { err, result } = cb
-  if (err) {
-    ...
-  } else if (result) {
-    ...
-  }
+      if (err) {
+        
+      } else if (result) {
+      
+      }
 })
+```
 
 ## Method finished
 + scanCode
