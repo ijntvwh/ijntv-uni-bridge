@@ -1,0 +1,24 @@
+{
+  "name": "ijntv-uni-bridge",
+  "version": "0.0.2",
+  "description": "ijntv uni webview bridge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ijntv",
+    "uni",
+    "webview",
+    "bridge"
+  ],
+  "author": "ijntvwh",
+  "license": "ISC",
+  "dependencies": {
+    "uni-webview-lib": "^1.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:ijntvwh/ijntv-uni-bridge.git"
+  }
+}
