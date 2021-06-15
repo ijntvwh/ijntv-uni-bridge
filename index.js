@@ -19,8 +19,8 @@ class IjntvJsBridge {
     }
   }
 
-  async scanCode(args) {
-    return this[_method]('scanCode', args)
+  async scanCode() {
+    return this[_method]('scanCode')
   }
 
   async router(args) {
@@ -39,16 +39,19 @@ class IjntvJsBridge {
     return this[_method]('checkPermission', args)
   }
 
-  async authorize(args) {
-    return this[_method]('authorize', args)
+  async authorize() {
+    return this[_method]('authorize')
   }
 
-  async getUserInfo(args) {
-    return this[_method]('getUserInfo', args)
+  async getUserInfo() {
+    return this[_method]('getUserInfo')
   }
 
-  async requestApi(args) {
-    return this[_method]('requestApi', args)
+  async requestApi(api, args) {
+    if (api === 'navigatorConfig' && args.right && typeof args.right.handle === 'function') {
+      this[_map].set('share', args.right.handle)
+    }
+    return this[_method]('requestApi', Object.assign(args, {api}))
   }
 
   log(data) {
