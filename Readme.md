@@ -1,5 +1,9 @@
 ## Install
+main.js
+```javascript
 import bridge from 'ijntv-uni-bridge'
+bridge.init()
+```
 
 ## Example
 ```javascript
@@ -18,8 +22,6 @@ bridge.router(args).then(cb => {
 + scanCode
 + router
 + authorize
-
-## Method todo
 + share
 + getCurrentPosition
 + checkPermission

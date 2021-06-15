@@ -1,6 +1,6 @@
 {
   "name": "ijntv-uni-bridge",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "ijntv uni webview bridge",
   "main": "index.js",
   "scripts": {
