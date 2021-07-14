@@ -41,6 +41,9 @@ class IjntvJsBridge {
         case 'log':
           messageToNvue(this[_webview].postMessage, undefined, action, payload)
           break
+        case 'back':
+          payload === window.location.href ? this[_webview].navigateBack({}) : window.history.back()
+          break
         case 'register':
           this[_register] = true
           break
@@ -105,10 +108,10 @@ class IjntvJsBridge {
     return this[_publicMethod]('requestApi', Object.assign({}, args, {api}))
   }
 
-  queryCbById(id) {
+  queryCbById(id, data) {
     const cbMap = this[_map]
     if (typeof id === 'string') {
-      this[_privateMethod](id)
+      this[_privateMethod](id, data)
     } else if (Number.isInteger(id) && cbMap.has(id)) {
       const cb = cbMap.get(id)
       cbMap.delete(id)
@@ -119,7 +122,7 @@ class IjntvJsBridge {
 
 const bridge = new IjntvJsBridge()
 window.ijntvCb = function (res) {
-  const callback = bridge.queryCbById(res.id)
+  const callback = bridge.queryCbById(res.id, res.data)
   callback && callback(res.data)
 }
 export default bridge
